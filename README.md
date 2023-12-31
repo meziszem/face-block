@@ -7,8 +7,11 @@ Using Clarifai's AI face detection program, I made an app that will block any fa
 # Getting Started with Face Block
 
 1: Register yourself using a name, email and password.
+
 2: On the home page, you will see a url box, which you can fill with an image link. Use images that end with a png or jpg like this: https://miro.medium.com/v2/resize:fit:853/1*gvcB5wlFg8gSOVjRkwFsxQ.jpeg
+
 3: Press 'Block'
+
 4: Blocked!
 
 # Under Construction
