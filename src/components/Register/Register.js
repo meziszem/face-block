@@ -53,19 +53,13 @@ class Register extends React.Component {
                          }
             })
             .catch(error => {
-                if (error.response) {
-                    // The request was made and the server responded with a status code
-                    // that falls out of the range of 2xx
-                    console.error('Server responded with error status:', error.response.status);
-                    console.error('Response data:', error.response.data); // Log the response data if available
-                } else if (error.request) {
-                    // The request was made but no response was received
-                    console.error('No response received:', error.request);
-                } else {
-                    // Something happened in setting up the request that triggered an error
-                    console.error('Request setup error:', error.message);
-                }
-                console.error('Error details:', error.config);
+                console.error('Error caught during fetch:', error);
+            
+                // Log specific attributes of the error object to understand its structure
+                console.error('Error response:', error.response);
+                console.error('Error request:', error.request);
+                console.error('Error message:', error.message);
+                console.error('Error configuration:', error.config);
             });
                 }
     
