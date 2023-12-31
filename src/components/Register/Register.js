@@ -53,8 +53,9 @@ class Register extends React.Component {
                          }
             })
         .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
+            console.error('There was a problem with the fetch operation:', error);
+        });
+                }
     
     render() {
         return (
