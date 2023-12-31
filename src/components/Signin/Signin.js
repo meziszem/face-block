@@ -25,6 +25,7 @@ class Signin extends React.Component {
       }
 
     onSubmitSignIn = () => {
+    // 'http://localhost:3000/signin'
         fetch('https://face-block.onrender.com/signin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -41,7 +42,7 @@ class Signin extends React.Component {
                 } 
 
         })
-
+        .catch(console.log())
 
     }
 
