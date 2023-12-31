@@ -30,7 +30,7 @@ class Register extends React.Component {
 
     onRegister = () => {
     //   'http://localhost:3000/register'
-        fetch('https://face-block.onrender.com/register', {
+        fetch('https://face-block-back-end.onrender.com/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

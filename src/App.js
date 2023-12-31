@@ -74,7 +74,7 @@ class App extends Component {
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
     // 'http://localhost:3000/imageurl'
-          fetch('https://face-block.onrender.com/imageurl', {
+          fetch('https://face-block-back-end.onrender.com/imageurl', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -85,7 +85,7 @@ class App extends Component {
             .then(response => {
               if (response) {
                 // 'http://localhost:3000/image'
-                fetch('https://face-block.onrender.com/image', {
+                fetch('https://face-block-back-end.onrender.com/image', {
                   method: 'put',
                   headers: {'Content-Type': 'application/json'},
                   body: JSON.stringify({
