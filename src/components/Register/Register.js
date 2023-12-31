@@ -52,9 +52,21 @@ class Register extends React.Component {
                 
                          }
             })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
+            .catch(error => {
+                if (error.response) {
+                    // The request was made and the server responded with a status code
+                    // that falls out of the range of 2xx
+                    console.error('Server responded with error status:', error.response.status);
+                    console.error('Response data:', error.response.data); // Log the response data if available
+                } else if (error.request) {
+                    // The request was made but no response was received
+                    console.error('No response received:', error.request);
+                } else {
+                    // Something happened in setting up the request that triggered an error
+                    console.error('Request setup error:', error.message);
+                }
+                console.error('Error details:', error.config);
+            });
                 }
     
     render() {
