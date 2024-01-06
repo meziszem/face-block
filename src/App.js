@@ -73,7 +73,6 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
-    // 'http://localhost:3000/imageurl'
           fetch('https://face-block-back-end.onrender.com/imageurl', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
@@ -84,7 +83,6 @@ class App extends Component {
             .then(response => response.json())
             .then(response => {
               if (response) {
-                // 'http://localhost:3000/image'
                 fetch('https://face-block-back-end.onrender.com/image', {
                   method: 'put',
                   headers: {'Content-Type': 'application/json'},
@@ -99,7 +97,6 @@ class App extends Component {
                   })
                   .catch(console.log)
                 }
-                // console.log('response', response)
                 this.displayFaceBox(this.calculateFaceLocation(response))
               })
               .catch(err => console.log(err));
@@ -119,11 +116,15 @@ class App extends Component {
     const { isSignedIn, imageUrl, route, boxes } = this.state;
   return (
     <div className="App">
-      <Particles  />
+      <Particles />
       <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
+      
+      <div className=''>
+        <Logo />
+      </div>
       {route === 'home'
         ? <div>
-          <Logo />
+          {/* <Logo /> */}
           <Rank name={this.state.user.name}
             entries={this.state.user.entries} />
           <ImageLinkForm
@@ -137,9 +138,38 @@ class App extends Component {
           : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
 
           )
-          
       }
+      
+      <footer class="pv4 ph3 ph5-m ph6-l ">
+  <small class="f6 db tc">© 2023 <b class="ttu"> <a
+        rel="noreferrer"
+            target="_blank"
+            href="https://meziszem.netlify.app/">mez</a></b>, All Rights Reserved</small>
+  <div class="tc mt3 cta">
+  <a
+        rel="noreferrer"
+            target="_blank"
+            className="cta-btn grow"
+            href="mailto:meseretfh@gmail.com"
+        >
+          <img src="mail_ico.png"
+            alt="github"
+            width={40}
+            /></a>
+<a
+        rel="noreferrer"
+            target="_blank"
+            className="cta-btn grow"
+            href="https://github.com/meziszem"
+        >
+          <img src="github_ico.png"
+            alt="github"
+            width={50}
+            /></a>  </div>
+</footer>
+      
     </div>
+    
     );
   }
 }

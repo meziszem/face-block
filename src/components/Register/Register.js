@@ -20,7 +20,6 @@ class Register extends React.Component {
     }
 
     onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>): void => {
-        // 'keypress' event misbehaves on mobile so we track 'Enter' key via 'keydown' event
         if (event.key === 'Enter') {
           event.preventDefault();
           event.stopPropagation();
@@ -29,7 +28,6 @@ class Register extends React.Component {
       }
 
     onRegister = () => {
-    //   'http://localhost:3000/register'
         fetch('https://face-block-back-end.onrender.com/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -54,8 +52,6 @@ class Register extends React.Component {
             })
             .catch(error => {
                 console.error('Error caught during fetch:', error);
-            
-                // Log specific attributes of the error object to understand its structure
                 console.error('Error response:', error.response);
                 console.error('Error request:', error.request);
                 console.error('Error message:', error.message);

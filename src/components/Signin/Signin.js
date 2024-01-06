@@ -1,4 +1,5 @@
 import React from "react";
+// import Logo from './components/Logo/Logo';
 
 class Signin extends React.Component {
     constructor(props) {
@@ -16,7 +17,6 @@ class Signin extends React.Component {
     }
 
     onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>): void => {
-        // 'keypress' event misbehaves on mobile so we track 'Enter' key via 'keydown' event
         if (event.key === 'Enter') {
           event.preventDefault();
           event.stopPropagation();
@@ -25,7 +25,6 @@ class Signin extends React.Component {
       }
 
     onSubmitSignIn = () => {
-    // 'http://localhost:3000/signin'
         fetch('https://face-block-back-end.onrender.com/signin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

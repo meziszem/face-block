@@ -12,4 +12,35 @@
   justify-content: center;
 }
 
+.logo-format {
+  display: flex;
+  justify-content: center;
+}
 
+.intro {
+  display: block;
+  text-align: center;
+}
+
+a {
+  color: black;
+}
+a:hover {
+  color: rgb(135, 135, 135);
+}
+
+h4 {
+  margin-bottom: 5px;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: nowrap;  
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-btn {
+display: block;
+padding: 5px;
+}
