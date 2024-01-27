@@ -160,7 +160,7 @@ class App extends Component {
         rel="noreferrer"
             target="_blank"
             className="cta-btn grow"
-            href="https://github.com/meziszem"
+            href="https://github.com/meziszem/face-block"
         >
           <img src="github_ico.png"
             alt="github"
